@@ -12,6 +12,7 @@ public class CoreParser extends Parser
 	{
 		header = HeaderParser.getInstance();
 		declarations = DeclarationsParser.getInstance();
+		body = BodyParser.getInstance();
 		
 		allParsers = new Parser[3];
 		allParsers[0] = header;
@@ -33,11 +34,13 @@ public class CoreParser extends Parser
 		ProdResult res = null;
 		for (int i = 0; i < 3; i++)
 		{
+			
 			res = allParsers[i].parse(input);
 			if (!res.isSuccess())
 			{
 				return res;
 			}
+			input = res.getEndGroup();
 		}
 		return res;
 	}

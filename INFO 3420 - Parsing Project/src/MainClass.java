@@ -25,6 +25,17 @@ public class MainClass
 				System.out.println(prod.getEndGroup());
 		}
 		
+		String i = "set somes2d  to  23$  someother";
+		prod = AssignmentParser.getInstance().parse(i);
+		System.out.println(prod.getEndGroup());
+		
+		String test = 
+				"prog: name\n" +
+			    "startDeclar asd$b$ abcde35$ aeight12$ endDeclar\n" +
+			    "set some to 23$\n" + "set oth3 to some$\n" +
+			    "endProg";
+		System.out.println(cp.parse(test).getEndGroup());
+		
 		//System.out.println(input);
 	}
 
