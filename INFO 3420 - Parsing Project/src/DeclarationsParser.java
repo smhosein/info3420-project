@@ -7,7 +7,7 @@ public class DeclarationsParser extends Parser
 	
 	private static DeclarationsParser dp;
 	private String regex1 = "startDeclar(\\s)+(.*)?endDeclar(\\s)+((.*))";
-	private String regex2 = "((([a-z])(([a-zA-Z]|[1-9]){0,7}\\$)(\\s)*)*)";
+	private String regex2 = "((([a-z])(([a-zA-Z]|[0-9]){0,7}\\$)(\\s)*)*)";
 			
 	
 	private DeclarationsParser()
@@ -24,26 +24,6 @@ public class DeclarationsParser extends Parser
 	
 	public ProdResult parse(String str)
 	{
-		/*// First let us check if our declaraion
-		// block is properly formated in the first place
-		
-		Pattern pat = Pattern.compile(regex1);
-		Matcher mat = pat.matcher(input);
-		
-		// If our declaration block is a match
-		if (pat.matches(regex1, input))
-		{
-			String toCheck = mat.group(1);
-			String end = mat.group(3);
-			if (Pattern.matches(regex3, toCheck))
-			{
-				return (new Success(end));
-			}
-			
-			return (new Failure("Bad declarations in declarations block"));
-		}
-		
-		return (new Failure("Improper declaraion block"));*/
 		
 		Pattern pat = Pattern.compile(regex1, Pattern.DOTALL);
 		Matcher mat = pat.matcher(str);

@@ -2,7 +2,7 @@
 public class Globals 
 {
 	
-	public final static String VARIABLE = "([a-z](([a-zA-Z]|[1-9]){0,7}))";
+	public final static String VARIABLE = "([a-z](([a-zA-Z]|[0-9]){0,7}))";
 	public final static String OP = "(+|-|*|\\)";
 	public final static String RELATIONAL_OP = "(<|>)";
 	public final static String BOOL_OP = "(@|^)";

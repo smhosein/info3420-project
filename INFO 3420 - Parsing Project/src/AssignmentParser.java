@@ -37,8 +37,8 @@ public class AssignmentParser extends Parser
 			return (new Failure("Bad assignment statement"));
 		}
 		
-		for (int i = 1; i <= mat.groupCount(); i++)
-			System.out.println(i + " : " +mat.group(i));
+		//for (int i = 1; i <= mat.groupCount(); i++)
+			//System.out.println(i + " : " +mat.group(i));
 		
 		String ans = mat.group(25).trim();
 		return (new Success(ans));
